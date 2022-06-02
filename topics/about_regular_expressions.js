@@ -1,7 +1,10 @@
 // module("About Regular Expressions (topics/about_regular_expressions.js)");
-const { equal, ok } = require('assert')
-const { __, test } = require('../support/koans')
+import { equal, ok } from 'assert';
+import koans from '../support/koans.js'
 
+const { test } = koans
+
+function run(){
 test("exec", () => {
     const numberFinder = /(\d).*(\d)/;
     const results = numberFinder.exec("what if 6 turned out to be 9?");
@@ -28,5 +31,7 @@ test("replace", () => {
     });
     equal('what if six turned out to be nine?', pie, 'what is the value of pie?');
 });
-
-// THE END
+}
+export default{
+    run
+}

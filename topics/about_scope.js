@@ -1,7 +1,9 @@
-// module("About Scope (topics/about_scope.js)");
-const { equal } = require('assert')
-const { __, test } = require('../support/koans')
+import { equal } from 'assert';
+import koans from '../support/koans.js'
 
+const { test } = koans
+
+function run(){
 thisIsAGlobalVariable = 77;
 
 test("global variables", () => {
@@ -21,3 +23,7 @@ test("variables declared inside of a function", () => {
     equal("outer", outerVariable, 'is outerVariable defined in this scope?');
     equal('undefined', typeof(innerVariable), 'is innerVariable defined in this scope?');
 });
+}
+export default{
+    run
+}

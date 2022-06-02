@@ -3,6 +3,8 @@
   "name": "javascript-koans",
   "description": "Update ======",
   "version": "1.0.0",
+  "type": "module",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node ./",

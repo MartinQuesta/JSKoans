@@ -1,8 +1,9 @@
-// demonstrate the effect of modifying an objects prototype before and after the object is constructed
-// module("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)");
-const { equal } = require('assert')
-const { __, test } = require('../support/koans')
+import { equal } from 'assert';
+import koans from '../support/koans.js'
 
+const { test } = koans
+
+function run(){
 // this 'class' pattern defines a class by its constructor
 const Mammal = function(name) {
     this.name = name;
@@ -59,3 +60,7 @@ test("Inheritance", () => {
     equal("Hello, my name is Lenny", lenny.sayHi(), "what does Lenny say?");
     equal('1.5m', lenny.wingspan, "what is Lenny's wingspan?");
 });
+}
+export default{
+    run
+}

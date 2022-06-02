@@ -1,6 +1,9 @@
-// module("About Reflection (topics/about_reflection.js)");
-const { equal, deepEqual, ok } = require('assert')
-const { __, test } = require('../support/koans')
+import { equal } from 'assert';
+import koans from '../support/koans.js'
+
+const { test } = koans
+
+function run(){
 
 function A() {
     this.aprop = "A";
@@ -33,7 +36,7 @@ test("property enumeration", () => {
         values.push(person[propertyName]);
     }
 
-    ok(keys.equalTo(['name','age','unemployed']), 'what are the property names of the object?');
+    ok(keys.equalTo([ 'name', 'age', 'unemployed' ]), 'what are the property names of the object?');
     ok(values.equalTo(['Amory Blaine',102,true]), 'what are the property values of the object?');
 });
 
@@ -44,7 +47,7 @@ test("hasOwnProperty", () => {
     for (let propertyName in b) {
         keys.push(propertyName);
     }
-    equal(2, keys.length, 'how many elements are in the keys array?');
+    equal(3, keys.length, 'how many elements are in the keys array?');
     deepEqual(['bprop', 'aprop'], keys, 'what are the properties of the array?');
 
     // hasOwnProperty returns true if the parameter is a property directly on the object,
@@ -73,3 +76,7 @@ test("eval", () => {
     eval("result = 'apple' + ' ' + 'pie'");
     equal('apple pie', result, 'what is the value of result?');
 });
+}
+export default{
+    run
+}

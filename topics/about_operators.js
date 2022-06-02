@@ -1,7 +1,9 @@
-// module("About Operators (topics/about_operators.js)");
-const { equal } = require('assert')
-const { __, test } = require('../support/koans')
+import { equal } from 'assert';
+import koans from '../support/koans.js'
 
+const { test } = koans
+
+function run(){
 test("addition", () => {
   let result = 0;
   //starting i at 0, add i to result and increment i by 1 until i is equal to 5
@@ -46,3 +48,7 @@ test("modulus", () => {
   result %= x;
   equal(0, result, "What is the value of result?");
 });
+}
+export default{
+    run
+}
